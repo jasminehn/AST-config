@@ -1,1 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+:root{
+    --main-bg-color: #fff;
+    --text-color: #000;
+}
+body{
+    min-height: 100vh;
+    background: var(--main-bg-color);
+    color: var(--text-color);
 
+    /*TEMP*/ /*background: #3c414a;*/
+}

@@ -46,14 +46,18 @@ body{
     font-size: 16px;
     border: none;
     cursor: pointer;
+
+    transition: 0.5s ease background;
 }
 .white-button{
     background: white;
     border: 1px solid black;
-    
 }
 .gold-button{
     background: #D4AE58;
+}
+.gold-button:hover{
+    background: #ffd26a;
 }
 .basic-button{
     color: black;
@@ -96,7 +100,7 @@ body{
     width: 50%;
 }
 .header-wrapper .nasa-logo img{
-    width: 120px;
+    width: 60px;
 }
 .header-item-wrapper{
     display: flex;
@@ -127,10 +131,16 @@ body{
     font-size: 13px;
     border: 1px solid #2E2E32;
     padding: 10px;
+    cursor: text;
+
+    transition: 1s ease border;
 }
 .search-wrapper .fa-magnifying-glass{
     width: 12px;
     height: 12px;
+}
+.search-wrapper:hover{
+    border: 1px solid #B9B9BB;
 }
 .live-thing{
     border: 1px solid red;
@@ -238,6 +248,12 @@ body{
 .footer-links-wrapper.group-1 li{
     font-weight: bold;
     cursor: pointer;
+
+    transition: 0.5s ease;
+}
+.footer-links-wrapper.group-1 li:hover{
+    color: #959599;
+    
 }
 .footer-links-wrapper.group-1 .footer-links{
     display: flex;
@@ -268,6 +284,12 @@ body{
     background-color: #2E2E32;
     border-radius: 50%;
     padding: 7px;
+
+    cursor: pointer;
+    transition: 0.5s ease background;
+}
+.footer-links .socials .social-links .fa-brands:hover{
+    background-color: #959599;
 }
 .footer-wrapper hr{
     background-color: #2E2E32;

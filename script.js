@@ -7,80 +7,10 @@ if (document.readyState == 'loading') {
 function ready() {
     hideDivs();
     getToggleButtons();
-
-    /*
-    var hiddenDivs = document.getElementsByClassName('dropdown-text-wrapper')
-    for (var i = 0; i < hiddenDivs.length; i++) {
-        hiddenDivs[i].style.display = 'none'
-    }
-    
-    var toggleButtons = document.getElementsByClassName('toggle-dropdown')
-    for (var i = 0; i < toggleButtons.length; i++) {
-        var button = toggleButtons[i]
-        button.addEventListener('click', toggleClicked)
-        console.log("READY")
-    }
-    */
-    
-    /*
-    var parentElement = document.querySelector('body') // or any other parent element that exists in the DOM at the time of page load
-    parentElement.addEventListener('click', function(event) {
-        if (event.target.classList.contains('toggle-dropdown')) {
-            toggleClicked(event.target)
-        }
-        console.log("READY")
-    })
-    */
-    
-    //const toggleButtons = document.querySelectorAll('.toggle-button');
-    //toggleButtons.forEach(button => {
-    //    button.addEventListener('click', function() {
-    //        const hiddenDiv = this.parentNode.querySelector('.display-dorpdown-text');
-    //        if (hiddenDiv.style.display === 'none') {
-    //            hiddenDiv.style.display = 'block';
-    //        } else {
-    //            hiddenDiv.style.display = 'none';
-    //        }
-    //    });
-    //});
-    
+    //retrieveAnswers(); //load answers (kinda works)
 }
 
-function hideDivs(){
-    var hiddenDivs = document.getElementsByClassName('dropdown-text-wrapper')
-    for (var i = 0; i < hiddenDivs.length; i++) {
-        hiddenDivs[i].style.display = 'none'
-    }
-    console.log("HID THE DIVS")
-}
-
-function getToggleButtons() {
-    var toggleButtons = document.getElementsByClassName('toggle-dropdown')
-    for (var i = 0; i < toggleButtons.length; i++) {
-        var button = toggleButtons[i]
-        button.addEventListener('click', toggleClicked)
-    }
-    console.log("GOT THE TOGGLES")
-}
-
-function collectAnswer(inputName) {
-    //const name = document.getElementById("name-input").value;
-    // Do something with the name, e.g. store it in a database or update the UI
-    // Load the next question dynamically using AJAX, e.g. loadContent('question2.html', 'content-container')
-    const radioButtons = document.getElementsByName(inputName);
-    let selectedValue;
-
-    for (let i = 0; i < radioButtons.length; i++) {
-        if (radioButtons[i].checked) {
-        selectedValue = radioButtons[i].value;
-        break;
-        }
-    }
-
-    console.log(selectedValue);
-}
-
-//LOAD CONTENT
+//LOAD CONTENT VIA AJAX
 function loadContent(url, containerId) {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -91,30 +21,82 @@ function loadContent(url, containerId) {
     };
     xhttp.open("GET", url, true);    
     xhttp.send();
+    window.scrollTo({top: 0, behavior: 'smooth'}); //scrolls to top
 }
 
-//SHOW OR HIDE DISPLAY TEXT
-/*const toggleButton = document.getElementsByClassName('toggle-button');
-const hiddenDiv = document.getElementsByClassName('display-dorpdown-text');
-
-showDiv.addEventListener('click', () => {
-    if (hiddenDiv.style.display === 'none') {
-        hiddenDiv.style.display = 'block';
-    } else {
-        hiddenDiv.style.display = 'none';
+//HIDE THE DROPDOWNS WHEN PAGE LOADS
+function hideDivs(){
+    var hiddenDivs = document.getElementsByClassName('dropdown-text-wrapper')
+    for (var i = 0; i < hiddenDivs.length; i++) {
+        hiddenDivs[i].style.display = 'none'
     }
-});*/
 
+    /*var hiddenThings = document.getElementsByClassName('hide-me')
+    for (var i = 0; i < hiddenThings.length; i++) {
+        hiddenThings[i].style.display = 'none'
+    }*/
+    //console.log("HID THE DIVS")
+}
 
+//INITIALIZE TOGGLE BUTTONS
+function getToggleButtons() {
+    var toggleButtons = document.getElementsByClassName('toggle-dropdown')
+    for (var i = 0; i < toggleButtons.length; i++) {
+        var button = toggleButtons[i]
+        button.addEventListener('click', toggleClicked)
+    }
+    //console.log("GOT THE TOGGLES")
+}
+
+//SAVE INPUT ANSWERS FROM RADIO BUTTONS
+function collectAnswers(...inputName) {
+    /*const radioButtons = document.getElementsByName(inputName);
+    let selectedValue;
+
+    for (let i = 0; i < radioButtons.length; i++) {
+        if (radioButtons[i].checked) {
+            selectedValue = radioButtons[i].value;
+            break;
+        }
+    }
+
+    console.log(selectedValue);*/
+
+    var radioGroups = document.querySelectorAll('.radio-buttons-wrapper');
+    var answers = {}; // Define an object to store the answers
+
+    // Loop through each radio button group
+    radioGroups.forEach(function(radioGroup, index) {
+        var groupName = 'need-' + (index + 1); // Get the name of the radio button group
+        var selectedValue = radioGroup.querySelector('input:checked').value; // Get the selected value of the radio button group
+        answers[groupName] = selectedValue; // Add the answer to the answers object
+    });
+
+    console.log(answers); // Log the answers to the console
+    localStorage.setItem('answers', JSON.stringify(answers)); // Store the answers in localStorage
+}
+
+// GET ANSWERS FROM STORAGE
+function retrieveAnswers(){
+    var answers = JSON.parse(localStorage.getItem('answers'));
+
+    // Check if the value for need-1 is "yes"
+    if (answers['need-1'] === 'yes') {
+        document.querySelector('.hide-me').style.display = 'block'; // Show the element
+    }else{
+        document.querySelector('.hide-me').style.display = 'none';
+    }
+}
+
+//SELECT ALL CHECKBOXES
 function selectAll(source) {
-    //console.log("woop");
     checkboxes = document.getElementsByName(source.name);
     for(var i=0, n=checkboxes.length;i<n;i++) {
         checkboxes[i].checked = source.checked;
     }
-    //console.log("YEHET");
 }
 
+//DISABLE BUTTON UNTIL REQUIRED INPUTS ARE FILLED
 /*function checkInput() {
     const textInput = document.getElementById('project-name');
     const submitButton = document.querySelector('.gold-button');
@@ -130,75 +112,15 @@ function selectAll(source) {
     });
 }*/
 
-//              idk
-/*const toggleButtons = document.querySelectorAll('.toggle-button');
-
-toggleButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const hiddenDiv = this.parentNode.querySelector('.display-dorpdown-text');
-        if (hiddenDiv.style.display === 'none') {
-            hiddenDiv.style.display = 'block';
-        } else {
-            hiddenDiv.style.display = 'none';
-        }
-        console.log("HELLO?????");
-    });
-});
-*/
-
+//TOGGLE HIDE/SHOW DROPDOWNS
 function toggleClicked(event) {
-    console.log("HELLO...");
     var button = event.target
-    //const divToShow = button.parentNode.querySelector('.display-dropdown-text')
-    //const divToShow = button.parentElement.querySelector('.display-dropdown-text')
-    //const divToShow = button.parentElement.getElementsByClassName('display-dropdown-text')
     const divToShow = button.parentNode.parentNode.querySelector('.dropdown-text-wrapper')
     //console.log(button.parentNode.parentNode.className);
-    console.log(divToShow.style.display);
     
     if (divToShow.style.display === 'none') {
         divToShow.style.display = 'block';
     } else {
         divToShow.style.display = 'none';
     }
-    console.log("toggled bih");
 }
-
-/*function addItemToCart(title, price, imageSrc) {
-    var tbodyRef = document.getElementById('cart').getElementsByTagName('tbody')[0]
-    
-    //cartRow.classList.add('cart-row')
-    var cartItems = document.getElementsByClassName('cart-items')[0];
-    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-    
-    for (var i = 0; i < cartItemNames.length; i++) {
-        if (cartItemNames[i].innerText == title) {
-            console.log("YEET")
-            alert('This item is already added to the cart')
-            return
-        }
-    }
-
-    var cartRow = tbodyRef.insertRow();
-
-    //var cartRow = document.createElement('tr')
-    cartRow.classList.add('cart-item')
-
-    var cartRowContents = `
-        <tr class="cart-item">
-            <td>
-                <h1 class="cart-item-title">${title}</h1>
-                <img class="item-image" src="${imageSrc}">
-                <!--<p>You can tune a guitar, but you can't tuna fish</p>-->
-            </td>
-            <td class="cart-item-price">${price}</td>
-            <td><input class="quantity" type="number" value="1"></td>
-            <td class="remove-item"><i class="fa-solid fa-trash"></i></td>
-        </tr>
-        `
-
-    cartRow.innerHTML = cartRowContents
-    //cartItems.append(cartRow)
-    cartRow.getElementsByClassName('remove-item')[0].addEventListener('click', removeCartItem)
-    cartRow.getElementsByClassName('quantity')[0].addEventListener('change', quantityChanged)
-}*/

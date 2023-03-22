@@ -65,6 +65,7 @@ body{
     cursor: pointer;
 }
 
+
 /*            HEADER            */
 .global-header{
     /*position: absolute;*/
@@ -365,10 +366,8 @@ body{
 .steps .current{
     background-color: #2B3F8A;
 }
-/* .step-line {
-    flex: 1;
-    border: none;
-    border-top: 1px solid black;
+/* #need-1{
+    display: none;
 } */
 
 /*              QUESTION 1              */

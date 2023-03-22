@@ -1,0 +1,72 @@
+<body>
+    <div class="global-question">
+        <div class="question-wrapper">
+            <div class="progress-bar">
+                <h2>AST Configurator</h2>
+                <div class="progress-bar-wrapper">
+                    <div class="bar-part-wrapper">
+                        <div class="steps">
+                            <hr class="completed"><hr class="completed">
+                        </div>
+                        <h3><i class="fa-solid fa-circle-check"></i>Questionnaire</h3>
+                        <p>Complete</p>
+                    </div>
+                    <div class="bar-part-wrapper">
+                        <div class="steps">
+                            <hr class="completed"><hr class="completed"><hr class="current"><hr>
+                        </div>
+                        <h3>Configuration</h3>
+                        <p>Step 3 of 4</p>
+                    </div>
+                </div>
+            </div>
+            <div class="internal-content-wrapper">
+                <h1>Step 3</h1>
+                <div class="inquiry-wrapper config-steps">
+                    <div class="recommendation">
+                        <i class="fa-solid fa-message"></i>
+                        <p>Recommended because you answered "Deploy into an existing VPC" to the question <b class="fancy-link">"Would you like to deploy into an existing VPC or create a new one?"</b></p>
+                    </div>
+                    <!-- <div class="recommendation">
+                        <i class="fa-solid fa-message"></i>
+                        <p>Recommended because you answered "Create a new one" to the question <b class="fancy-link">"Would you like to deploy into an existing VPC or create a new one?"</b></p>
+                    </div> -->
+                    <div class="text-wrapper">
+                        <label for="vpc-id">If you're deploying into an existing VPC, fill in the VPC ID.<i class="fa-solid fa-question"></i></label>
+                        <input type="text" id="vpc-id" name="vpc-id" value="Text">
+                        <p class="help-text">CIDR Block</p>
+                    </div>
+                    <div class="text-wrapper">
+                        <label for="pub-subnet-zone1">If you're deploying into an existing VPC, fill in the ID of the public subnet in Availability Zone 1.<i class="fa-solid fa-question"></i></label>
+                        <input type="text" id="pub-subnet-zone1" name="pub-subnet-zone1" value="Text">
+                        <p class="help-text">CIDR Block</p>
+                    </div>
+                    <div class="text-wrapper">
+                        <label for="pub-subnet-zone2">If you're deploying into an existing VPC, fill in the ID of the public subnet in Availability Zone 2.<i class="fa-solid fa-question"></i></label>
+                        <input type="text" id="pub-subnet-zone2" name="pub-subnet-zone2" value="Text">
+                        <p class="help-text">CIDR Block</p>
+                    </div>
+                    <div class="text-wrapper">
+                        <label for="priv-subnet-zone1">If you're deploying into an existing VPC, fill in the ID of the private subnet in Availability Zone 1.<i class="fa-solid fa-question"></i></label>
+                        <input type="text" id="priv-subnet-zone1" name="priv-subnet-zone1" value="Text">
+                        <p class="help-text">CIDR Block</p>
+                    </div>
+                    <div class="text-wrapper">
+                        <label for="priv-subnet-zone2">If you're deploying into an existing VPC, fill in the ID of the private subnet in Availability Zone 2.<i class="fa-solid fa-question"></i></label>
+                        <input type="text" id="priv-subnet-zone2" name="priv-subnet-zone2" value="Text">
+                        <p class="help-text">CIDR Block</p>
+                    </div>
+                    <div class="text-wrapper">
+                        <label for="priv-subnet-zone3">If you're deploying into an existing VPC, fill in the ID of the private subnet in Availability Zone 3.<i class="fa-solid fa-question"></i></label>
+                        <input type="text" id="priv-subnet-zone3" name="priv-subnet-zone3" value="Text">
+                        <p class="help-text">CIDR Block</p>
+                    </div>
+                </div>
+                <div class="buttons-wrapper">
+                    <button onClick="loadContent('questions/con-step-2.html', 'content-container')" class="btn-style white-button">Go Back</button>
+                    <button onClick="loadContent('questions/con-step-4.html', 'content-container')" class="btn-style gold-button">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

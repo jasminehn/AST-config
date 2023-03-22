@@ -21,9 +21,22 @@ body{
     height: 420px;
 }
 .fancy-link{
-
+    color: #959599;
+    border-bottom: 1px dotted #959599;
+    /* text-decoration-style: dotted; */
 }
-/*            BUTTONS            */
+.fa-circle-check{
+    color: #47DA84;
+}
+.fa-question{
+    font-size: 13px;
+    color: white;
+    background-color: #7191D1;
+    border-radius: 50%;
+    padding: 4px 7px;
+    margin: 0 10px;
+    cursor: pointer;
+}
 .btn-style{
     display: flex;
     flex-direction: column;
@@ -41,6 +54,15 @@ body{
 }
 .gold-button{
     background: #D4AE58;
+}
+.basic-button{
+    color: black;
+    border: none;
+    border-bottom: 1px dotted #959599;
+    background: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /*            HEADER            */
@@ -89,7 +111,7 @@ body{
 .header-item-wrapper .fa-angle-down{
     font-size: 10px;
 }
-.fa-angle-down.special{
+.header-item-wrapper .fa-angle-down.special{
     border: 1px solid white;
     border-radius: 50%;
     padding: 2px;
@@ -315,16 +337,214 @@ body{
     flex-direction: column;
     gap: 10px;
 }
-.inquiry-wrapper .fa-question{
-    font-size: 14px;
-    color: #DADADA;
-    background-color: #7191D1;
-    border-radius: 50%;
-    padding: 4px 7px;
-    cursor: pointer;
+.inquiry-wrapper hr{
+    background-color: #D1D1D1;
+    height: 1px;
+    border: none;
 }
+/* .page-title .fa-question{
+    font-size: 24px;
+} */
 .radio-buttons-wrapper{
     display: flex;
     flex-direction: row;
     gap: 10px;
+}
+.steps{
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+.steps hr{
+    /* width: 50%; */
+    flex: 1;
+}
+.steps .completed{
+    background-color: #7191D1;
+}
+.steps .current{
+    background-color: #2B3F8A;
+}
+/* .step-line {
+    flex: 1;
+    border: none;
+    border-top: 1px solid black;
+} */
+
+/*              QUESTION 1              */
+.inquiry-wrapper.cb{
+    gap: 30px;
+}
+.check-box-wrapper.dropdown{
+
+}
+.check-box-wrapper.dropdown label{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 15px;
+
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+}
+.toggle-dropdown{
+    border: none;
+    background-color: white;
+}
+.check-box-wrapper.dropdown .toggle-dropdown{
+    float: right;
+}
+.check-box-wrapper.dropdown .fa-angle-down.special{
+    font-size: 15px;
+    border: 1px solid #B9B9BB;
+    border-radius: 50%;
+    padding: 3px 5px 1px 4px;
+    color: black;
+    
+    cursor: pointer;
+}
+.dropdown-text-wrapper{
+    /* display: none; */
+}
+.dropdown-text{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+
+    /* display: none; */
+}
+.recommendation{
+    width: 400px;
+    border: 1px solid #D4AE58;
+    padding: 20px;
+    line-height: 1.5;
+    color: #58585B;
+}
+.recommendation .fa-message{
+    color: #D4AE58;
+}
+.recommendation .fancy-link{
+    color: black;
+    font-weight: normal;
+}
+
+
+/*              Configuration           */
+.bar-part-wrapper .fa-circle-check{
+    margin-right: 5px;
+}
+.inquiry-wrapper.config-steps{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.inquiry-wrapper .text-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.inquiry-wrapper .text-wrapper label{
+    font-weight: bold;
+}
+.inquiry-wrapper .text-wrapper input{
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #D1D1D1;
+}
+.inquiry-wrapper .text-wrapper select{
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #D1D1D1;
+}
+.inquiry-wrapper .help-text{
+    color: #58585B;
+    font-size: 13px;
+}
+
+/*          CONFIG part 4           */
+.inquiry-wrapper .text-wrapper.review{
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.inquiry-wrapper .text-wrapper.review .help-text{
+    font-size: 17px;
+}
+
+/*          finished page           */
+.finished-wrapper{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.finished-wrapper h2{
+    font-size: 30px;
+}
+.message-wrapper{
+    border: 1px solid #47DA84;
+    padding: 75px 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 1.5;
+}
+.message-wrapper .fa-circle-check{
+    font-size: 40px;
+}
+.message-wrapper h1{
+    font-size: 50px;
+    font-weight: normal;
+}
+.message-wrapper p{
+    color: #58585B;
+}
+.finished-wrapper .fancy-link{
+    color: black;
+}
+.finished-wrapper hr{
+    background-color: #D1D1D1;
+    height: 1px;
+    border: none;
+}
+.deployment-wrapper{
+    display: flex;
+    flex-direction: row;
+    /* gap: 40px; */
+    /* justify-content: space-between; */
+    align-items: center;
+    width: 100%;
+}
+.fa-file-lines{
+    color: #58585B;
+    background-color: #E3E3E3;
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 10px 13px;
+}
+.deployment-info{
+    margin: 0 40px;
+    
+}
+.deployment-info p{
+    font-size: 12px;
+    color: #17171B;
+}
+.file-size{
+    font-size: 10px;
+    margin-left: 10px;
+}
+.fa-download{
+    color: white;
+    background-color: #7191D1;
+    font-size: 15px;
+    border-radius: 50%;
+    padding: 9px;
+    margin: 9px;
+    cursor: pointer;
+
+}
+.deployment-wrapper .thing{ /*this is to get the download thing all the way to the right*/
+    margin: 0 auto;
+    margin-right: 0;
 }

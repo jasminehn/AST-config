@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    
     <script src="https://kit.fontawesome.com/69c6d76ec7.js" crossorigin="anonymous"></script>
     <title>AST Configurator</title>
 
     <script>
+        /*
 		function loadContent(url, containerId) {
 			const xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
@@ -18,7 +20,7 @@
 			};
 			xhttp.open("GET", url, true);
 			xhttp.send();
-		}
+		}*/
 	</script>
 </head>
 <body>
@@ -77,76 +79,27 @@
     </nav>
     <div class="content-wrapper" id="content-container">
         <h1 class="page-title">Is AST Right for You?</h1>
-        <p class="description">Do you need SLE downlink processing and uplink transmission? Does the mission use 1 or fewer instruments? If the answer to these questions is yes, continue to the AST Questionnaire to bundle the necessary software and configure your AWS Quick Starts.<br><br>If AST isn’t suitable for your mission, you can find what you need at ammos.nasa.go</p>
+        <p class="description">Do you need SLE downlink processing and uplink transmission? Does the mission use 1 or fewer instruments? If the answer to these questions is yes, continue to the AST Questionnaire to bundle the necessary software and configure your AWS Quick Starts.<br><br>If AST isn’t suitable for your mission, you can find what you need at <a class="fancy-link" href="https://ammos.nasa.gov">ammos.nasa.gov</a></p> 
         <div class="buttons-wrapper">
-            <button class="btn-style white-button">I know what I need</button>
-            <button onclick="loadContent('questions/q0.html', 'content-container')" class="btn-style gold-button">Continue to Questionnaire</button>
+            <button onClick="loadContent('questions/che-step-1.html', 'content-container')" class="btn-style white-button">I know what I need</button>
+            <!-- <button onclick="loadContent('questions/que-step-1.html', 'content-container')" class="btn-style gold-button">Continue to Questionnaire</button> -->
+            <button onClick="loadContent('questions/que-step-1.html', 'content-container')" class="btn-style gold-button">Continue to Questionnaire</button>
         </div>
     </div> 
     <div class="extra-space"></div>
-    <!--      TEMPORARY      
-    <div id="content-container">
+    
+    <!--      TEMPORARY      -->
+    <!-- <div id="content-container">
 		
 	</div>
 	<button onclick="loadContent('questions/q0.html', 'content-container')">Start</button>
     <div class="extra-space"></div>  -->
 
     <!-- <div class="content-wrapper">
-        <div class="global-question">
-            <div class="question-wrapper">
-                <div class="progress-bar">
-                    <h2>AST Configurator</h2>
-                    <div class="progress-bar-wrapper">
-                        <div class="bar-part-wrapper">
-                            <hr>
-                            <h3>Questionnaire</h3>
-                            <p>Step 1 of 2</p>
-                        </div>
-                        <div class="bar-part-wrapper">
-                            <hr>
-                            <h3>Configuration</h3>
-                            <p>Not Started</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="internal-content-wrapper">
-                    <h1 class="page-title">What do you need?</h1>
-                    <div class="inquiry-wrapper">
-                        <p>Do you need data vizualization? <i class="fa-solid fa-question"></i></p>
-                        <div class="radio-buttons-wrapper">
-                            <input type="radio" id="yes" name="need-1" value="yes" checked>
-                            <label for="yes">Yes</label><br>
-                            <input type="radio" id="no" name="need-1" value="no">
-                            <label for="no">No</label><br>
-                        </div>
-                    </div>
-                    <div class="inquiry-wrapper">
-                        <p>Do you need to perform spacecraft activity planning? <i class="fa-solid fa-question"></i></p>
-                        <div class="radio-buttons-wrapper">
-                            <input type="radio" id="yes" name="need-2" value="yes" checked>
-                            <label for="yes">Yes</label><br>
-                            <input type="radio" id="no" name="need-2" value="no">
-                            <label for="no">No</label><br>
-                        </div>
-                    </div>
-                    <div class="inquiry-wrapper">
-                        <p>Do you need to perform sequencing of commands? <i class="fa-solid fa-question"></i></p>
-                        <div class="radio-buttons-wrapper">
-                            <input type="radio" id="yes" name="need-3" value="yes" checked>
-                            <label for="yes">Yes</label><br>
-                            <input type="radio" id="no" name="need-3" value="no">
-                            <label for="no">No</label><br>
-                        </div>
-                    </div>
-                    <div class="buttons-wrapper">
-                        <div class="btn-style white-button">Go Back</div>
-                        <div class="btn-style gold-button">Continue</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div> 
     <div class="extra-space"></div>   -->
+
     <footer class="global-footer">
         <div class="footer-wrapper">
             <div class="nasa-logo">
@@ -225,5 +178,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

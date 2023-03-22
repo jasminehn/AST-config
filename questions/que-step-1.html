@@ -5,12 +5,16 @@
                 <h2>AST Configurator</h2>
                 <div class="progress-bar-wrapper">
                     <div class="bar-part-wrapper">
-                        <hr>
+                        <div class="steps">
+                            <hr><hr>
+                        </div>
                         <h3>Questionnaire</h3>
                         <p>Step 1 of 2</p>
                     </div>
                     <div class="bar-part-wrapper">
-                        <hr>
+                        <div class="steps">
+                            <hr><hr><hr><hr>
+                        </div>
                         <h3>Configuration</h3>
                         <p>Not Started</p>
                     </div>
@@ -19,7 +23,7 @@
             <div class="internal-content-wrapper">
                 <h1 class="page-title">What do you need?</h1>
                 <div class="inquiry-wrapper">
-                    <p>Do you need data vizualization? <i class="fa-solid fa-question"></i></p>
+                    <p><b>Do you need data vizualization?</b><i class="fa-solid fa-question"></i></p>
                     <div class="radio-buttons-wrapper">
                         <input type="radio" id="yes" name="need-1" value="yes" checked>
                         <label for="yes">Yes</label><br>
@@ -28,7 +32,7 @@
                     </div>
                 </div>
                 <div class="inquiry-wrapper">
-                    <p>Do you need to perform spacecraft activity planning? <i class="fa-solid fa-question"></i></p>
+                    <p><b>Do you need to perform spacecraft activity planning?</b><i class="fa-solid fa-question"></i></p>
                     <div class="radio-buttons-wrapper">
                         <input type="radio" id="yes" name="need-2" value="yes" checked>
                         <label for="yes">Yes</label><br>
@@ -37,7 +41,7 @@
                     </div>
                 </div>
                 <div class="inquiry-wrapper">
-                    <p>Do you need to perform sequencing of commands? <i class="fa-solid fa-question"></i></p>
+                    <p><b>Do you need to perform sequencing of commands?</b><i class="fa-solid fa-question"></i></p>
                     <div class="radio-buttons-wrapper">
                         <input type="radio" id="yes" name="need-3" value="yes" checked>
                         <label for="yes">Yes</label><br>
@@ -46,8 +50,8 @@
                     </div>
                 </div>
                 <div class="buttons-wrapper">
-                    <div class="btn-style white-button">Go Back</div>
-                    <div class="btn-style gold-button">Continue</div>
+                    <button onClick="loadContent('questions/intro.html', 'content-container')" class="btn-style white-button">Go Back</button>
+                    <button onClick="loadContent('questions/que-step-2.html', 'content-container')" class="btn-style gold-button">Continue</button>
                 </div>
             </div>
         </div>

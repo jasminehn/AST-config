@@ -1,0 +1,67 @@
+<body>
+    <div class="global-question">
+        <div class="question-wrapper">
+            <div class="progress-bar">
+                <h2>AST Configurator</h2>
+                <div class="progress-bar-wrapper">
+                    <div class="bar-part-wrapper">
+                        <div class="steps">
+                            <hr class="completed"><hr class="completed">
+                        </div>
+                        <h3><i class="fa-solid fa-circle-check"></i>Questionnaire</h3>
+                        <p>Complete</p>
+                    </div>
+                    <div class="bar-part-wrapper">
+                        <div class="steps">
+                            <hr class="current"><hr><hr><hr>
+                        </div>
+                        <h3>Configuration</h3>
+                        <p>Step 1 of 4</p>
+                    </div>
+                </div>
+            </div>
+            <div class="internal-content-wrapper">
+                <h1>Step 1</h1>
+                <div class="inquiry-wrapper config-steps">
+                    <div class="text-wrapper">
+                        <label for="project-name">What is the name of your project?<i class="fa-solid fa-question"></i></label>
+                        <input type="text" id="project-name" name="project-name" value="Text">
+                        <p class="help-text">This will be used for naming resources; pattern must match constraint.</p>
+                    </div>
+                    <div class="text-wrapper">
+                        <label for="instance-type">Select an instance type<i class="fa-solid fa-question"></i></label>
+                        <select id="instance-type" name="instance-type">
+                            <option value="t3.medium" selected>t3.medium</option>
+                            <option value="idk">idk</option>
+                            <option value="what">what</option>
+                            <option value="else">else</option>
+                        </select>
+                        <p class="help-text">Help Text (optional)</p>
+                    </div>
+                    <div class="text-wrapper">
+                        <label for="cloudwatch">How long would you like to retain logs in CloudWatch?<i class="fa-solid fa-question"></i></label>
+                        <input type="text" id="cloudwatch" name="cloudwatch" value="Text">
+                        <p class="help-text">Please provide your answer in number of days</p>
+                    </div>
+                    <div class="text-wrapper">
+                        <label for="domain-name">What is the Fully Qualified Domain Name to be used for your applications?<i class="fa-solid fa-question"></i></label>
+                        <input type="text" id="domain-name" name="domain-name" value="Text">
+                        <p class="help-text">Help Text (optional)</p>
+                    </div>
+                    <div class="text-wrapper">
+                        <label for="dns-records">How would you like to manage DNS records for your deployment?<i class="fa-solid fa-question"></i></label>
+                        <select id="dns-records" name="dns-records">
+                            <option value="manage-own" selected>I will manage my own DNS records</option>
+                            <option value="route53">Use Route53 to deploy DNS records on my behalf</option>
+                        </select>
+                        <p class="help-text">Help Text (optional)</p>
+                    </div>
+                </div>
+                <div class="buttons-wrapper">
+                    <button onClick="loadContent('questions/che-step-1.html', 'content-container')" class="btn-style white-button">Go Back</button>
+                    <button onClick="loadContent('questions/con-step-2.html', 'content-container')" class="btn-style gold-button">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

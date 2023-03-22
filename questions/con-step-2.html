@@ -1,0 +1,61 @@
+<body>
+    <div class="global-question">
+        <div class="question-wrapper">
+            <div class="progress-bar">
+                <h2>AST Configurator</h2>
+                <div class="progress-bar-wrapper">
+                    <div class="bar-part-wrapper">
+                        <div class="steps">
+                            <hr class="completed"><hr class="completed">
+                        </div>
+                        <h3><i class="fa-solid fa-circle-check"></i>Questionnaire</h3>
+                        <p>Complete</p>
+                    </div>
+                    <div class="bar-part-wrapper">
+                        <div class="steps">
+                            <hr class="completed"><hr class="current"><hr><hr>
+                        </div>
+                        <h3>Configuration</h3>
+                        <p>Step 2 of 4</p>
+                    </div>
+                </div>
+            </div>
+            <div class="internal-content-wrapper">
+                <h1>Step 2</h1>
+                <div class="inquiry-wrapper config-steps">
+                    <div class="recommendation">
+                        <i class="fa-solid fa-message"></i>
+                        <p>Recommended because you answered "I will manage my own DNS records" to the question <b class="fancy-link">"How would you like to manage DNS records for your deployment?"</b></p>
+                    </div>
+                    <!-- <div class="recommendation">
+                        <i class="fa-solid fa-message"></i>
+                        <p>Recommended because you answered "Use Route53 to deploy DNS records on my behalf" to the question <b class="fancy-link">"How would you like to manage DNS records for your deployment?"</b></p>
+                    </div> 
+                    <div class="text-wrapper">
+                        <label for="ssl-arn">What is the ID for the Hosted Zone you've configured in Route53?<i class="fa-solid fa-question"></i></label>
+                        <input type="text" id="ssl-arn" name="ssl-arn" value="Text">
+                        <p class="help-text">Help Text (optional)</p>
+                    </div>
+                    -->
+                    <div class="text-wrapper">
+                        <label for="ssl-arn">What is the ARN of the SSL Certificate to use with these applications?<i class="fa-solid fa-question"></i></label>
+                        <input type="text" id="ssl-arn" name="ssl-arn" value="Text">
+                        <p class="help-text">Help Text (optional)</p>
+                    </div>
+                    <div class="text-wrapper">
+                        <label for="deploy-vpc">Would you like to deploy into an existing VPC or create a new one?<i class="fa-solid fa-question"></i></label>
+                        <select id="deploy-vpc" name="deploy-vpc">
+                            <option value="create-new" selected>Create a new one</option>
+                            <option value="existing">Deploy to existing</option>
+                        </select>
+                        <p class="help-text">Help Text (optional)</p>
+                    </div>
+                </div>
+                <div class="buttons-wrapper">
+                    <button onClick="loadContent('questions/con-step-1.html', 'content-container')" class="btn-style white-button">Go Back</button>
+                    <button onClick="loadContent('questions/con-step-3.html', 'content-container')" class="btn-style gold-button">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
